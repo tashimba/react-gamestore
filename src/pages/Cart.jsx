@@ -6,17 +6,17 @@ import { cartItemsSelect } from "../redux/cartSlice";
 
 const Cart = () => {
   const items = useSelector((state) => cartItemsSelect(state));
-  // const isMounted = React.useRef(false);
+  const isMounted = React.useRef(false);
 
-  // React.useEffect(() => {
-  //   if (isMounted.current) {
-  //     const json = JSON.stringify(items);
-  //     localStorage.setItem("cart", json);
-  //   }
-  //   isMounted.current = true;
-  // }, [items]);
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem("cart", json);
+    }
+    isMounted.current = true;
+  }, [items]);
 
-  // console.log(localStorage.getItem("cart"));
+  console.log(localStorage.getItem("cart"));
 
   return (
     <>
