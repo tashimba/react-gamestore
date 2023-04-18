@@ -243,7 +243,8 @@ input::placeholder {
   top: 68%;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
+  width: 90%;
+  // width: 100%;
   margin-bottom: 30px;
 
   display: flex;
@@ -272,8 +273,9 @@ input::placeholder {
 }
 .trending-title-view {
   width: 100%;
+  // padding: 0 2vw;
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2vw;
@@ -333,14 +335,22 @@ input::placeholder {
       filter: brightness(110%);
     }
     .trending-item-title {
-      scale: 1.2;
+      scale: 1.1;
     }
   }
   &-title {
     font-size: 1.5vw;
     font-weight: 800;
     position: absolute;
+    text-align: center;
     transition: 0.2s;
+    max-width: 300px;
+    @media (max-width: 600px) {
+      font-size: 2vw;
+    }
+    @media (max-width: 400px) {
+      font-size: 2.5vw;
+    }
   }
   &-img {
     border-radius: 25px;
@@ -540,6 +550,9 @@ input::placeholder {
       &:hover {
         color: white;
         scale: 1.015;
+      }
+      @media (max-width: 600px) {
+        font-size: 5vw;
       }
     }
   }
@@ -856,6 +869,12 @@ input::placeholder {
         font-size: 2vw;
         max-width: 400px;
         overflow: hidden;
+        @media (max-width: 600px) {
+          font-size: 2.5vw;
+        }
+        @media (max-width: 400px) {
+          font-size: 3vw;
+        }
       }
     }
 
@@ -901,6 +920,12 @@ input::placeholder {
       background-color: rgba(196, 196, 196, 0.05);
       font-size: 2.3vw;
       transition: 0.2s;
+      @media (max-width: 600px) {
+        font-size: 2.5vw;
+      }
+      @media (max-width: 400px) {
+        font-size: 3vw;
+      }
       &:hover {
         color: white;
         // border: 1px solid white;
@@ -918,3 +943,10 @@ input::placeholder {
     text-align: center;
   }
 }
+
+// .ml-20 {
+//   margin-left: 7vw;
+// }
+// .mr-20 {
+//   margin-right: 7vw;
+// }

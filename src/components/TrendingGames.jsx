@@ -20,7 +20,7 @@ const TrendingGames = ({ games }) => {
         </div>
         <div className="trending-items">
           {games.map((el, index) => (
-            <TrendCard cardRef={cardRef} data={el} key={index} />
+            <TrendCard data={el} key={index} index={index} />
           ))}
         </div>
       </div>
