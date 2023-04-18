@@ -46,7 +46,7 @@ const GameCard = (props) => {
                 )}
               </div>
             )}
-            {/* <div className="games-item-platforms">
+            <div className="games-item-platforms">
               {props.props?.parent_platforms[0] && (
                 <div className="games-item-platforms-item">
                   {props.props.parent_platforms[0].platform.name}
@@ -63,7 +63,7 @@ const GameCard = (props) => {
                   {props.props.parent_platforms[2].platform.name}
                 </div>
               )}
-            </div> */}
+            </div>
           </Link>
           <div
             className={addedToCart ? "games-item-add added" : "games-item-add"}
