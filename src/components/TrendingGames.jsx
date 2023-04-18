@@ -3,12 +3,6 @@ import TrendCard from "./TrendCard";
 import { Link } from "react-router-dom";
 
 const TrendingGames = ({ games }) => {
-  // const btnTitles = ["VIEW ALL", "HIDE"];
-
-  // const [count, setCount] = React.useState(3);
-  // const [btn, setBtn] = React.useState(btnTitles[0]);
-  const cardRef = React.useRef();
-  console.log(cardRef.current);
   return (
     <div>
       <div className="trending">

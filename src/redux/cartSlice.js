@@ -16,7 +16,7 @@ export const fetchCartItem = createAsyncThunk(
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
+    items: JSON.parse(localStorage.getItem("cart")) || [],
   },
   reducers: {
     addItem(state, action) {

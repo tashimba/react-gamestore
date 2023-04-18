@@ -272,7 +272,7 @@ input::placeholder {
   }
 }
 .trending-title-view {
-  width: 100%;
+  width: 95%;
   // padding: 0 2vw;
   display: flex;
   // flex-direction: row;
@@ -740,6 +740,7 @@ input::placeholder {
       column-gap: 30px;
       row-gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      margin-bottom: 30px;
     }
 
     &-filter {
@@ -944,9 +945,21 @@ input::placeholder {
   }
 }
 
-// .ml-20 {
-//   margin-left: 7vw;
-// }
-// .mr-20 {
-//   margin-right: 7vw;
-// }
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  &-btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #ccc;
+    transition: 0.2s;
+    &:hover {
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+  }
+}

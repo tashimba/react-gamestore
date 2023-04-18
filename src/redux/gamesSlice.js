@@ -9,22 +9,21 @@ export const fetchGames = createAsyncThunk(
       const { data } = await axios.get(
         `https://rawg.io/api/games?&token&key=${apiKey}`
       );
-      console.log(data);
+      // console.log(data);
       const res = data.results;
       return res;
     }
 
-    const { searchSort, searchPlatform, searchGenre, searchPage } = params;
+    const { searchSort, searchPlatform, searchGenre, page } = params;
     if (searchGenre !== undefined) {
       const { data } = await axios.get(
-        `https://rawg.io/api/games?ordering=-${searchSort}&metacritic=85,100&page=${searchPage}&platforms=${searchPlatform.id}&genres=${searchGenre.slug}&token&key=${apiKey}`
+        `https://rawg.io/api/games?ordering=-${searchSort}&metacritic=85,100&page=${page}&platforms=${searchPlatform.id}&genres=${searchGenre.slug}&token&key=${apiKey}`
       );
       const res = data.results;
       return res;
     } else {
-      const { searchPage } = params;
       const { data } = await axios.get(
-        `https://rawg.io/api/games?ordering=-${searchSort}&metacritic=85,100&page=${searchPage}&platforms=${searchPlatform.id}&token&key=${apiKey}`
+        `https://rawg.io/api/games?ordering=-${searchSort}&metacritic=85,100&page=${page}&platforms=${searchPlatform.id}&token&key=${apiKey}`
       );
       const res = data.results;
       return res;
@@ -46,8 +45,7 @@ export const gamesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchGames.fulfilled, (state, action) => {
       console.log(action.payload);
-      state.items = [...state.items, ...action.payload];
-      console.log(state.items);
+      state.items = action.payload;
       state.loading = false;
     });
     builder.addCase(fetchGames.rejected, (action) => {

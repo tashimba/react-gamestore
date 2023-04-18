@@ -14,11 +14,8 @@ const GamePage = () => {
 
   const cartItems = useSelector((state) => cartItemsSelect(state));
   const data = useSelector((state) => gameSelect(state));
-  console.log(data);
   const loading = useSelector((state) => loadingGameSelect(state));
   const screenshots = useSelector((state) => imagesGameSelect(state));
-
-  const [cartState, setCartState] = React.useState();
   const [addedCart, setAddedCart] = React.useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -26,9 +23,6 @@ const GamePage = () => {
   React.useEffect(() => {
     dispatch(fetchGame(id));
   }, []);
-  // const checkAddedCart = () => {
-  //   console.log
-  // };
 
   React.useEffect(() => {
     setAddedCart(cartItems.find((el) => el.id === data.id));
@@ -45,14 +39,12 @@ const GamePage = () => {
       {!loading ? (
         <div className="game-content">
           <div className="game-content-header">
-            {/* <Link to={"/"}> */}
             <h1
               onClick={() => navigate(-1)}
               className="game-content-header-back click"
             >
               ← Store
             </h1>
-            {/* </Link> */}
             <div className="game-content-header-title">
               <h1>{data?.name}</h1>
             </div>

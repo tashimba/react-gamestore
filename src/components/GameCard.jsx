@@ -6,6 +6,7 @@ import { fetchGame, gameSelect } from "../redux/gameSlice";
 import { cartItemsSelect } from "../redux/cartSlice";
 
 const GameCard = (props) => {
+  console.log(props);
   const dispatch = useDispatch();
   const [addedToCart, setAddedToCart] = React.useState(false);
   const cartItems = useSelector((state) => cartItemsSelect(state));
@@ -47,15 +48,13 @@ const GameCard = (props) => {
               </div>
             )}
             <div className="games-item-platforms">
-              {props.props?.parent_platforms[0] && (
-                <div className="games-item-platforms-item">
-                  {props.props.parent_platforms[0].platform.name}
-                </div>
-              )}
+              <div className="games-item-platforms-item">
+                {props.props?.parent_platforms[0]?.platform.name}
+              </div>
 
               {
                 <div className="games-item-platforms-item">
-                  {props.props?.parent_platforms[1].platform.name}
+                  {props.props?.parent_platforms[1]?.platform.name}
                 </div>
               }
               {props.props.parent_platforms[2] && (
